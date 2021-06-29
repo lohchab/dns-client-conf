@@ -1,6 +1,6 @@
 # dns-client-conf - Simple and portable cli tool and golang package for work with operating system dns client settings
 
-[![GoDoc](http://godoc.org/github.com/ArtemKulyabin/dns-client-conf?status.svg)](http://godoc.org/github.com/ArtemKulyabin/dns-client-conf) [![Build Status](https://travis-ci.org/ArtemKulyabin/dns-client-conf.svg)](https://travis-ci.org/ArtemKulyabin/dns-client-conf)
+[![GoDoc](http://godoc.org/github.com/lohchab/dns-client-conf?status.svg)](http://godoc.org/github.com/lohchab/dns-client-conf) [![Build Status](https://travis-ci.org/ArtemKulyabin/dns-client-conf.svg)](https://travis-ci.org/ArtemKulyabin/dns-client-conf)
 
 ## Installation
 
@@ -9,7 +9,7 @@ To install dns-client-conf, please use `go get`.
 ### Command line tool
 
 ```
-$ go get github.com/ArtemKulyabin/dns-client-conf/cmd/dns-client-conf
+$ go get github.com/lohchab/dns-client-conf/cmd/dns-client-conf
 ...
 $ dns-client-conf help
 ...
@@ -18,7 +18,7 @@ $ dns-client-conf help
 ### Package
 
 ```
-$ go get github.com/ArtemKulyabin/dns-client-conf
+$ go get github.com/lohchab/dns-client-conf
 ...
 ```
 
@@ -55,7 +55,7 @@ package main
 
 import (
   "log"
-  "github.com/ArtemKulyabin/dns-client-conf"
+  "github.com/lohchab/dns-client-conf"
 )
 
 func main() {
@@ -83,7 +83,7 @@ func main() {
 ## Cross compilation
 For cross compilation you may use the [Gox](github.com/mitchellh/gox). Example:
 ```
-$ gox github.com/ArtemKulyabin/dns-client-conf/cmd/dns-client-conf
+$ gox github.com/lohchab/dns-client-conf/cmd/dns-client-conf
 ...
 ```
 

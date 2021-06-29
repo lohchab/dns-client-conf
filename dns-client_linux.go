@@ -1,6 +1,6 @@
 package dnsclientconf
 
-import "github.com/ArtemKulyabin/dns-client-conf/debugmode"
+import "github.com/lohchab/dns-client-conf/debugmode"
 
 const (
 	ResolvConfigPath         = "/etc/resolv.conf"

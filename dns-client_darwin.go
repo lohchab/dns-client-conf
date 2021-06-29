@@ -3,8 +3,8 @@ package dnsclientconf
 import (
 	"net"
 
-	"github.com/ArtemKulyabin/dns-client-conf/debugmode"
-	"github.com/ArtemKulyabin/dns-client-conf/resolvconf"
+	"github.com/lohchab/dns-client-conf/debugmode"
+	"github.com/lohchab/dns-client-conf/resolvconf"
 )
 
 const (

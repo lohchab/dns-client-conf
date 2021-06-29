@@ -5,9 +5,9 @@ import (
 	"net"
 	"os"
 
-	"github.com/ArtemKulyabin/dns-client-conf"
-	"github.com/ArtemKulyabin/dns-client-conf/debugmode"
-	"github.com/ArtemKulyabin/dns-client-conf/helpers"
+	"github.com/lohchab/dns-client-conf"
+	"github.com/lohchab/dns-client-conf/debugmode"
+	"github.com/lohchab/dns-client-conf/helpers"
 
 	"github.com/codegangsta/cli"
 )

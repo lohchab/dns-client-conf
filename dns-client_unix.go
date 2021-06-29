@@ -5,8 +5,8 @@ package dnsclientconf
 import (
 	"net"
 
-	"github.com/ArtemKulyabin/dns-client-conf/dhclient"
-	"github.com/ArtemKulyabin/dns-client-conf/resolvconf"
+	"github.com/lohchab/dns-client-conf/dhclient"
+	"github.com/lohchab/dns-client-conf/resolvconf"
 )
 
 type dNSConfig struct {

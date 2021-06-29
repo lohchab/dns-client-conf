@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ArtemKulyabin/dns-client-conf/helpers"
+	"github.com/lohchab/dns-client-conf/helpers"
 )
 
 // GetNameServers consume resolv.conf path and returns current host dns servers

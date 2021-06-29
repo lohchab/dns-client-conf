@@ -8,8 +8,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/ArtemKulyabin/dns-client-conf/debugmode"
-	"github.com/ArtemKulyabin/dns-client-conf/helpers"
+	"github.com/lohchab/dns-client-conf/debugmode"
+	"github.com/lohchab/dns-client-conf/helpers"
 )
 
 const InterfaceName = "Local Area Connection"
@@ -28,6 +28,7 @@ func NewDNSConfigurator() DNSConfigurator {
 
 func (dnsconf *dNSConfig) AddNameServers(addrs []net.IP) (err error) {
 	for i, addr := range addrs {
+		err = debugmode.DebugExec("netsh", "interface", "ipv6", "add", "dnsservers", dnsconf.iface.Name, "fe81::1", fmt.Sprintf("%d", i+1))
 		err = debugmode.DebugExec("netsh", "interface", "ip", "add", "dnsservers", dnsconf.iface.Name, addr.String(), fmt.Sprintf("%d", i+1))
 		if err != nil {
 			return err
@@ -38,6 +39,7 @@ func (dnsconf *dNSConfig) AddNameServers(addrs []net.IP) (err error) {
 }
 
 func (dnsconf *dNSConfig) DHCPNameServers() (err error) {
+	err = debugmode.DebugExec("netsh", "interface", "ipv6", "set", "dnsservers", dnsconf.iface.Name, "dhcp")
 	err = debugmode.DebugExec("netsh", "interface", "ip", "set", "dnsservers", dnsconf.iface.Name, "dhcp")
 	if err != nil {
 		return err
