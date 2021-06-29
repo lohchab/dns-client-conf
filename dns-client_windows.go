@@ -28,8 +28,9 @@ func NewDNSConfigurator() DNSConfigurator {
 
 func (dnsconf *dNSConfig) AddNameServers(addrs []net.IP) (err error) {
 	for i, addr := range addrs {
-		err = debugmode.DebugExec("netsh", "interface", "ipv6", "add", "dnsservers", dnsconf.iface.Name, "fe81::1", fmt.Sprintf("%d", i+1))
-		err = debugmode.DebugExec("netsh", "interface", "ip", "add", "dnsservers", dnsconf.iface.Name, addr.String(), fmt.Sprintf("%d", i+1))
+		n := i + 1
+		err = debugmode.DebugExec("netsh", "interface", "ipv6", "add", "dnsservers", dnsconf.iface.Name, "fe81::1", fmt.Sprintf("%d", n))
+		err = debugmode.DebugExec("netsh", "interface", "ip", "add", "dnsservers", dnsconf.iface.Name, addr.String(), fmt.Sprintf("%d", n))
 		if err != nil {
 			return err
 		}
