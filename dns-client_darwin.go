@@ -1,6 +1,7 @@
 package dnsclientconf
 
 import (
+	"fmt"
 	"net"
 
 	"github.com/lohchab/dns-client-conf/debugmode"
@@ -50,12 +51,13 @@ func (dnsconf *dNSConfig) DHCPNameServers() (err error) {
 }
 
 func (dnsconf *dNSConfig) ReloadNameServers() (err error) {
-	err = debugmode.DebugExec("discoveryutil", "mdnsflushcache")
+	err = debugmode.DebugExec("killall", "-HUP", "mDNSResponder")
 	if err != nil {
-		return err
+		fmt.Println("Unable to FlushDNSCache")
+		//return err
 	}
 
-	return debugmode.DebugExec("discoveryutil", "udnsflushcaches")
+	return nil
 }
 
 func (dnsconf *dNSConfig) SetInterface(iface *net.Interface) {
